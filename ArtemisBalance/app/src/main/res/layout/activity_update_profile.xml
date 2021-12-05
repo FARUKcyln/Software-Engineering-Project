@@ -4,6 +4,98 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F4A442"
     tools:context=".UpdateProfileActivity">
+
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="274dp"
+        android:layout_height="35dp"
+        android:text="@string/please_click_to_icon_on_top_left_to_save_changes_on_your_profile"
+        android:textAlignment="center"
+        tools:layout_editor_absoluteX="68dp"
+        tools:layout_editor_absoluteY="76dp" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName3"
+        android:layout_width="243dp"
+        android:layout_height="22dp"
+        android:background="@drawable/rounded_green"
+        android:ems="10"
+        android:hint="@string/name_and_surname"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="327dp" />
+
+    <EditText
+        android:id="@+id/editTextTextEmailAddress4"
+        android:layout_width="243dp"
+        android:layout_height="22dp"
+        android:background="@drawable/rounded_green"
+        android:ems="10"
+        android:hint="@string/e_mail"
+        android:inputType="textEmailAddress"
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="399dp" />
+
+    <EditText
+        android:id="@+id/editTextPhone"
+        android:layout_width="243dp"
+        android:layout_height="22dp"
+        android:background="@drawable/rounded_green"
+        android:ems="10"
+        android:hint="@string/phone_number"
+        android:inputType="phone"
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="470dp" />
+
+    <EditText
+        android:id="@+id/editTextTextPassword4"
+        android:layout_width="243dp"
+        android:layout_height="22dp"
+        android:background="@drawable/rounded_green"
+        android:ems="10"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="538dp" />
+
+    <EditText
+        android:id="@+id/editTextTextPassword5"
+        android:layout_width="243dp"
+        android:layout_height="22dp"
+        android:background="@drawable/rounded_green"
+        android:ems="10"
+        android:hint="@string/confirm_password"
+        android:inputType="textPassword"
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="616dp" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:tint="#000000"
+        app:srcCompat="@android:drawable/ic_menu_close_clear_cancel"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="141dp"
+        tools:layout_editor_absoluteY="141dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="35dp"
+        android:layout_height="37dp"
+        app:srcCompat="@drawable/check_icon"
+        tools:layout_editor_absoluteX="360dp"
+        tools:layout_editor_absoluteY="16dp"
+        app:tint="#000000" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
