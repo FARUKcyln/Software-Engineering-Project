@@ -13,4 +13,7 @@
     <string name="enter_your_email_and_we_ll_send_you_a_link_to_get_back_into_your_account">Enter your email and we’ll send you a link to get back into your account.</string>
     <string name="next">Next</string>
     <string name="trouble_logging_in">Trouble logging in?</string>
+    <string name="name_and_surname">name and surname</string>
+    <string name="phone_number">phone number</string>
+    <string name="here_s_how_your_profile_looks_you_can_update_your_information_with_edit_button_on_top_left">Here’s how your profile looks! You can update your information with edit button on top left.</string>
 </resources>
