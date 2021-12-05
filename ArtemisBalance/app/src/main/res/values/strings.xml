@@ -17,4 +17,8 @@
     <string name="phone_number">phone number</string>
     <string name="here_s_how_your_profile_looks_you_can_update_your_information_with_edit_button_on_top_left">Here’s how your profile looks! You can update your information with edit button on top left.</string>
     <string name="please_click_to_icon_on_top_left_to_save_changes_on_your_profile">Please click to icon on top left to save changes on your profile!</string>
+    <string name="having_a_trouble_let_us_know">Having a Trouble? Let us know.</string>
+    <string name="Name">Name</string>
+    <string name="E_mail">E-mail</string>
+    <string name="message">Message</string>
 </resources>
