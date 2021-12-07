@@ -10,9 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ArtemisBalance">
         <activity
-            android:name=".FeedHistoryActivity"
-            android:exported="false" />
-        <activity
             android:name=".ContactActivity"
             android:exported="false" />
         <activity
