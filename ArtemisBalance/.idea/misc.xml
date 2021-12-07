@@ -18,12 +18,13 @@
         <entry key="..\:/Users/Faruk/Documents/GitHub/Software-Engineering-Project/ArtemisBalance/app/src/main/res/drawable/circle_orange.xml" value="0.3828125" />
         <entry key="..\:/Users/Faruk/Documents/GitHub/Software-Engineering-Project/ArtemisBalance/app/src/main/res/drawable/rounded_green.xml" value="0.3828125" />
         <entry key="..\:/Users/Faruk/Documents/GitHub/Software-Engineering-Project/ArtemisBalance/app/src/main/res/drawable/rounded_grey.xml" value="0.3828125" />
-        <entry key="..\:/Users/Faruk/Documents/GitHub/Software-Engineering-Project/ArtemisBalance/app/src/main/res/layout/activity_contact.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Faruk/Documents/GitHub/Software-Engineering-Project/ArtemisBalance/app/src/main/res/layout/activity_contact.xml" value="0.1" />
         <entry key="..\:/Users/Faruk/Documents/GitHub/Software-Engineering-Project/ArtemisBalance/app/src/main/res/layout/activity_feed_history.xml" value="0.1953125" />
         <entry key="..\:/Users/Faruk/Documents/GitHub/Software-Engineering-Project/ArtemisBalance/app/src/main/res/layout/activity_forgot_password.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Faruk/Documents/GitHub/Software-Engineering-Project/ArtemisBalance/app/src/main/res/layout/activity_login.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Faruk/Documents/GitHub/Software-Engineering-Project/ArtemisBalance/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Faruk/Documents/GitHub/Software-Engineering-Project/ArtemisBalance/app/src/main/res/layout/activity_menu.xml" value="0.1" />
+        <entry key="..\:/Users/Faruk/Documents/GitHub/Software-Engineering-Project/ArtemisBalance/app/src/main/res/layout/activity_maps.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Faruk/Documents/GitHub/Software-Engineering-Project/ArtemisBalance/app/src/main/res/layout/activity_menu.xml" value="0.33" />
         <entry key="..\:/Users/Faruk/Documents/GitHub/Software-Engineering-Project/ArtemisBalance/app/src/main/res/layout/activity_profile.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Faruk/Documents/GitHub/Software-Engineering-Project/ArtemisBalance/app/src/main/res/layout/activity_register.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Faruk/Documents/GitHub/Software-Engineering-Project/ArtemisBalance/app/src/main/res/layout/activity_update_profile.xml" value="0.36666666666666664" />
@@ -35,5 +36,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.36666666666666664" />
+      </ProjectState>
+    </option>
   </component>
 </project>
