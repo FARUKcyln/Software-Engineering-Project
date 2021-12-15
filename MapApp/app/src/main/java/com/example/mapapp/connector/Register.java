@@ -2,18 +2,20 @@ package com.example.mapapp.connector;
 
 public class Register {
     String name;
-    // String surname;
-    // String phone;
+    String surname;
+    String phone;
     String email;
     String password;
 
-    public Register(String name, String email, String password) {
-        this.name = name;
-        this.email = email;
-        this.password = password;
+    public Register() {
     }
 
-    public Register() {
+    public Register(String name, String surname, String phone, String email, String password) {
+        this.name = name;
+        this.surname = surname;
+        this.phone = phone;
+        this.email = email;
+        this.password = password;
     }
 
     public String getName() {
@@ -22,6 +24,22 @@ public class Register {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public String getEmail() {

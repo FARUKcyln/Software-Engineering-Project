@@ -40,7 +40,7 @@ import com.google.android.gms.location.FusedLocationProviderClient;
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
-    private ActivityMapsBinding binding;
+    private @NonNull ActivityMapsBinding binding;
     FusedLocationProviderClient fusedLocationProviderClient;
     Location currentLocation;
     TextView menu;
@@ -159,6 +159,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             @Override
             public boolean onMarkerClick(Marker m) {
                 Intent intent = new Intent(MapsActivity.this, PopActivity.class);
+                intent.putExtra("LatLng", m.getPosition());
                 startActivity(intent);
                 return true;
             }

@@ -1,31 +1,40 @@
 package com.example.mapapp.connector;
 
 public class PostFeed {
-    int point;
-    int amount;
-
-
-    public PostFeed(int point, int amount) {
-        this.point = point;
-        this.amount = amount;
-    }
+    String point_latitude;
+    String point_longitude;
+    String point_id;
 
     public PostFeed() {
     }
 
-    public int getPoint() {
-        return point;
+    public PostFeed(String point_latitude, String point_longitude, String point_id) {
+        this.point_latitude = point_latitude;
+        this.point_longitude = point_longitude;
+        this.point_id = point_id;
     }
 
-    public void setPoint(int point) {
-        this.point = point;
+    public String getPoint_latitude() {
+        return point_latitude;
     }
 
-    public int getAmount() {
-        return amount;
+    public void setPoint_latitude(String point_latitude) {
+        this.point_latitude = point_latitude;
     }
 
-    public void setAmount(int amount) {
-        this.amount = amount;
+    public String getPoint_longitude() {
+        return point_longitude;
+    }
+
+    public void setPoint_longitude(String point_longitude) {
+        this.point_longitude = point_longitude;
+    }
+
+    public String getPoint_id() {
+        return point_id;
+    }
+
+    public void setPoint_id(String point_id) {
+        this.point_id = point_id;
     }
 }

@@ -26,4 +26,6 @@
     <string name="my_feeding_history">My Feeding History</string>
     <string name="contact_us">Contact Us</string>
     <string name="title_activity_maps">MapsActivity</string>
+    <string name="details">Details</string>
+    <string name="add_food">Add Food</string>
 </resources>
