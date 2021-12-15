@@ -1,15 +1,22 @@
 package com.example.mapapp;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
+import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.mapapp.connector.BackendConnector;
+import com.example.mapapp.connector.PostFeed;
+import com.example.mapapp.connector.PostFeedResponse;
 import com.google.android.gms.maps.model.LatLng;
 
 import java.io.IOException;
@@ -24,6 +31,8 @@ public class PopActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pop);
         addFood = findViewById(R.id.button14);
@@ -58,7 +67,24 @@ public class PopActivity extends Activity {
             e.printStackTrace();
         }
 
+        addFood.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                PostFeed postFeed = new PostFeed(String.valueOf(latLng.latitude), String.valueOf(latLng.longitude), "2");
+                try {
+                    PostFeedResponse postFeedResponse = BackendConnector.postFeed(LoginActivity.jwt, postFeed);
+                    if (postFeedResponse.getStatus()) {
+                        Toast.makeText(getApplicationContext(), "***SUCCESSFULLY Food Added***", Toast.LENGTH_LONG).show();
 
+                    } else {
+                        Toast.makeText(getApplicationContext(), postFeedResponse.getErrorText(), Toast.LENGTH_LONG).show();
+                    }
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
 
     }
 }

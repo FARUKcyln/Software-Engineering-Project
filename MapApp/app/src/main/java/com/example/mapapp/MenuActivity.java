@@ -8,6 +8,7 @@ import android.os.Parcelable;
 import android.os.StrictMode;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.example.mapapp.connector.BackendConnector;
 import com.example.mapapp.connector.GetFeedResponse;
@@ -21,6 +22,8 @@ public class MenuActivity extends AppCompatActivity {
     Button profile;
     Button feedHistory;
     Button contactUs;
+    ImageView back;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
@@ -30,6 +33,7 @@ public class MenuActivity extends AppCompatActivity {
         profile = findViewById(R.id.button6);
         feedHistory = findViewById(R.id.button7);
         contactUs = findViewById(R.id.button8);
+        back = findViewById(R.id.imageView13);
 
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,6 +75,14 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MenuActivity.this, ContactActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MenuActivity.this, MapsActivity.class);
                 startActivity(intent);
             }
         });

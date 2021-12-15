@@ -16,6 +16,7 @@ import java.io.IOException;
 
 public class ProfileActivity extends AppCompatActivity {
     ImageView edit;
+    ImageView back;
     ImageView profilePicture;
     TextView nameAndSurname;
     TextView eMail;
@@ -30,7 +31,7 @@ public class ProfileActivity extends AppCompatActivity {
         nameAndSurname = findViewById(R.id.textView6);
         eMail = findViewById(R.id.textView7);
         phoneNumber = findViewById(R.id.textView8);
-
+        back = findViewById(R.id.imageView7);
         edit = findViewById(R.id.imageView6);
         edit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,6 +46,12 @@ public class ProfileActivity extends AppCompatActivity {
         eMail.setText(extras.getString("eMail"));
         phoneNumber.setText(extras.getString("phoneNumber"));
 
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
     }
 }

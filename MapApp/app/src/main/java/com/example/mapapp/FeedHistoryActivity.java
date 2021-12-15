@@ -8,6 +8,7 @@ import android.graphics.Typeface;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
@@ -30,6 +31,8 @@ public class FeedHistoryActivity extends AppCompatActivity {
     @SuppressLint("ResourceAsColor")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feed_history);
         feedHistory = findViewById(R.id.scrollView2);
@@ -76,7 +79,7 @@ public class FeedHistoryActivity extends AppCompatActivity {
 
                 TextView locationText = new TextView(this);
                 Geocoder geocoder = new Geocoder(this, Locale.getDefault());
-                List<Address> addresses = geocoder.getFromLocation(40.785091, -73.968285, 1);
+                List<Address> addresses = geocoder.getFromLocation(40.807940, 29.356220, 1);
                 String pointLocation = "Point " + feed.getPoint_id() + ". " + addresses.get(0).getAddressLine(0) + ". ";
                 locationText.setText(pointLocation);
                 locationText.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT));

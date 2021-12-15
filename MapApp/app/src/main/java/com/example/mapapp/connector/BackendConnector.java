@@ -291,7 +291,7 @@ public class BackendConnector {
         in.close();
 
 
-        Type listType = new TypeToken<ArrayList<Feed>>(){}.getType();
+        Type listType = new TypeToken<List<Feed>>(){}.getType();
         List<Feed> feedList = new Gson().fromJson(response.toString(), listType);
         getFeedResponse.setFeedList(feedList);
         getFeedResponse.setStatus(true);

@@ -4,8 +4,8 @@ import java.util.Date;
 
 public class Feed {
     String _id;
-    int point_latitude;
-    int point_longitude;
+    double point_latitude;
+    double point_longitude;
     int  point_id;
     int amount;
     String date;
@@ -14,7 +14,7 @@ public class Feed {
     public Feed() {
     }
 
-    public Feed(String _id, int point_latitude, int point_longitude, int point_id, int amount, String date, int __v) {
+    public Feed(String _id, double point_latitude, double point_longitude, int point_id, int amount, String date, int __v) {
         this._id = _id;
         this.point_latitude = point_latitude;
         this.point_longitude = point_longitude;
@@ -32,7 +32,7 @@ public class Feed {
         this._id = _id;
     }
 
-    public int getPoint_latitude() {
+    public double getPoint_latitude() {
         return point_latitude;
     }
 
@@ -40,7 +40,7 @@ public class Feed {
         this.point_latitude = point_latitude;
     }
 
-    public int getPoint_longitude() {
+    public double getPoint_longitude() {
         return point_longitude;
     }
 
