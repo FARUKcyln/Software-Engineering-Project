@@ -17,7 +17,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MapApp">
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 6279e41 (Map has been edited.)
 =======
 >>>>>>> parent of 6279e41 (Map has been edited.)
         <activity

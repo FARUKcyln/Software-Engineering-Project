@@ -6,7 +6,11 @@ buildscript {
     }
     dependencies {
 <<<<<<< HEAD
+<<<<<<< HEAD
         classpath "com.android.tools.build:gradle:7.0.4"
+=======
+        classpath "com.android.tools.build:gradle:7.0.3"
+>>>>>>> parent of 6279e41 (Map has been edited.)
 =======
         classpath "com.android.tools.build:gradle:7.0.3"
 >>>>>>> parent of 6279e41 (Map has been edited.)

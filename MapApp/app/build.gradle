@@ -42,7 +42,10 @@ dependencies {
     implementation 'com.google.android.gms:play-services-maps:18.0.0'
     implementation 'com.google.android.gms:play-services-location:18.0.0'
 <<<<<<< HEAD
+<<<<<<< HEAD
     implementation 'com.google.android.gms:play-services-places:17.0.0'
+=======
+>>>>>>> parent of 6279e41 (Map has been edited.)
 =======
 >>>>>>> parent of 6279e41 (Map has been edited.)
     testImplementation 'junit:junit:4.+'
