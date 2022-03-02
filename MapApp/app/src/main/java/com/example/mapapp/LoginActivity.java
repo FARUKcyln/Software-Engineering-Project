@@ -35,9 +35,9 @@ public class LoginActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*Intent intent = new Intent(LoginActivity.this, MapsActivity.class);
-                startActivity(intent);*/
-                Login l = new Login(String.valueOf(e_mail.getText()), String.valueOf(password.getText()));
+                Intent intent = new Intent(LoginActivity.this, PlacePickerActivity.class);
+                startActivity(intent);
+                /*Login l = new Login(String.valueOf(e_mail.getText()), String.valueOf(password.getText()));
                 System.out.println(l.getEmail() + " " + l.getPassword());
                 try {
                     LoginResponse loginResponse = BackendConnector.login(l);
@@ -50,7 +50,7 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 } catch ( IOException e) {
                     e.printStackTrace();
-                }
+                }*/
             }
         });
 

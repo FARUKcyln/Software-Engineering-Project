@@ -1,6 +1,0 @@
-<resources>
-    <string name="app_name">ArtemisBalanceProject</string>
-    <string name="register">Register</string>
-    <string name="login">Login</string>
-    <string name="title_activity_maps">MapsActivity</string>
-</resources>
