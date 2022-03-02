@@ -53,7 +53,7 @@ public class RegisterActivity extends AppCompatActivity {
                     try {
                         RegisterResponse registerResponse = BackendConnector.register(register);
                         if (registerResponse.isStatus()){
-                            Toast.makeText(getApplicationContext(), "***SUCCESSFULLY REGISTERED***", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), "SUCCESSFULLY REGISTERED", Toast.LENGTH_LONG).show();
                             finish();
                         }else{
                             Toast.makeText(getApplicationContext(), registerResponse.getErrorText().toUpperCase(Locale.ROOT), Toast.LENGTH_LONG).show();

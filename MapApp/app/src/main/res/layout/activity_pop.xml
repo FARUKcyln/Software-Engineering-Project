@@ -108,16 +108,6 @@
             android:layout_width="match_parent"
             android:layout_height="49dp"
             android:orientation="horizontal">
-            <Space
-                android:layout_width="15dp"
-                android:layout_height="wrap_content" />
-
-            <Button
-                android:id="@+id/button13"
-                android:layout_width="167dp"
-                android:layout_height="match_parent"
-                android:background="@drawable/rounded_grey"
-                android:text="@string/details" />
 
             <Space
                 android:layout_width="25dp"
@@ -125,10 +115,11 @@
 
             <Button
                 android:id="@+id/button14"
-                android:layout_width="0dp"
-                android:layout_height="49dp"
+                android:layout_width="381dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/rounded_grey"
+                android:gravity="center"
                 android:text="@string/add_food" />
 
             <Space

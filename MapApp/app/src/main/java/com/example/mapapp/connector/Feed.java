@@ -7,22 +7,11 @@ public class Feed {
     double point_latitude;
     double point_longitude;
     int  point_id;
-    int amount;
+    double amount;
     String date;
     int __v;
 
-    public Feed() {
-    }
 
-    public Feed(String _id, double point_latitude, double point_longitude, int point_id, int amount, String date, int __v) {
-        this._id = _id;
-        this.point_latitude = point_latitude;
-        this.point_longitude = point_longitude;
-        this.point_id = point_id;
-        this.amount = amount;
-        this.date = date;
-        this.__v = __v;
-    }
 
     public String get_id() {
         return _id;
@@ -56,7 +45,7 @@ public class Feed {
         this.point_id = point_id;
     }
 
-    public int getAmount() {
+    public double getAmount() {
         return amount;
     }
 

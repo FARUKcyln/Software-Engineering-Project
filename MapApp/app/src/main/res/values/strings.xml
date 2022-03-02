@@ -28,4 +28,8 @@
     <string name="title_activity_maps">MapsActivity</string>
     <string name="details">Details</string>
     <string name="add_food">Add Food</string>
+    <string name="add_address">Add Address</string>
+    <string name="optional">Optional</string>
+    <string name="address_optional">Address (optional)</string>
+    <string name="remove_address">REMOVE ADDRESS</string>
 </resources>

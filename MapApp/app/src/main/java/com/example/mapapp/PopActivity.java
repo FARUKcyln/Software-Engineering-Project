@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.mapapp.connector.BackendConnector;
+import com.example.mapapp.connector.Point;
 import com.example.mapapp.connector.PostFeed;
 import com.example.mapapp.connector.PostFeedResponse;
 import com.google.android.gms.maps.model.LatLng;
@@ -55,13 +56,20 @@ public class PopActivity extends Activity {
 
         Bundle extras = getIntent().getExtras();
         LatLng latLng = (LatLng) extras.get("LatLng");
+        double storage = 0;
+        for (Point p: LoginActivity.pointList) {
+            if(p.getLatitude() == latLng.latitude && p.getLongitude() == latLng.longitude){
+                storage = p.getStorage();
+            }
+        }
+
 
         Geocoder geocoder = new Geocoder(this, Locale.getDefault());
         try {
             List<Address> addresses = geocoder.getFromLocation(latLng.latitude, latLng.longitude, 1);
             String locationText = addresses.get(0).getAddressLine(0);
             location.setText(locationText);
-            String amountText = "5 kg";
+            String amountText = String.valueOf(storage);
             amount.setText(amountText);
         } catch (IOException e) {
             e.printStackTrace();
@@ -74,7 +82,7 @@ public class PopActivity extends Activity {
                 try {
                     PostFeedResponse postFeedResponse = BackendConnector.postFeed(LoginActivity.jwt, postFeed);
                     if (postFeedResponse.getStatus()) {
-                        Toast.makeText(getApplicationContext(), "***SUCCESSFULLY Food Added***", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "SUCCESSFULLY Food Added", Toast.LENGTH_LONG).show();
 
                     } else {
                         Toast.makeText(getApplicationContext(), postFeedResponse.getErrorText(), Toast.LENGTH_LONG).show();

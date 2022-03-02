@@ -59,8 +59,8 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try {
-                    GetFeedResponse getFeedResponse = BackendConnector.getFeeds(LoginActivity.jwt);
-                    if (getFeedResponse.getStatus()){
+                    GetFeedResponse getFeedResponse = BackendConnector.getFeedHistory(LoginActivity.jwt);
+                    if (getFeedResponse.isStatus()){
                         Intent intent = new Intent(MenuActivity.this, FeedHistoryActivity.class);
                         startActivity(intent);
                     }

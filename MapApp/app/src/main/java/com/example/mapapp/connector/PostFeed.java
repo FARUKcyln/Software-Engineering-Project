@@ -14,6 +14,7 @@ public class PostFeed {
         this.point_id = point_id;
     }
 
+
     public String getPoint_latitude() {
         return point_latitude;
     }

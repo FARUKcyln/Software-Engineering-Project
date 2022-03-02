@@ -23,6 +23,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.mapapp.connector.BackendConnector;
+import com.example.mapapp.connector.GetPointResponse;
+import com.example.mapapp.connector.Point;
 import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationResult;
@@ -99,7 +102,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 getCurrentLocation();
             } else {
-                Toast.makeText(this, "Permision Denied !", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Permission Denied !", Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -155,18 +158,21 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        LatLng GTU = new LatLng(40.807940, 29.356220);
-        mMap.addMarker(new MarkerOptions().position(GTU).title("GTU").icon(BitmapDescriptorFactory.fromResource(R.drawable.map_icon)));
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(GTU, 15));
-        mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
-            @Override
-            public boolean onMarkerClick(Marker m) {
-                Intent intent = new Intent(MapsActivity.this, PopActivity.class);
-                intent.putExtra("LatLng", m.getPosition());
-                startActivity(intent);
-                return true;
-            }
-        });
-    }
+        for (Point p: LoginActivity.pointList) {
+            LatLng location = new LatLng(p.getLatitude(), p.getLongitude());
+            mMap.addMarker(new MarkerOptions().position(location).icon(BitmapDescriptorFactory.fromResource(R.drawable.map_icon)));
+            mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+                @Override
+                public boolean onMarkerClick(Marker m) {
+                    Intent intent = new Intent(MapsActivity.this, PopActivity.class);
+                    intent.putExtra("LatLng", m.getPosition());
+                    startActivity(intent);
+                    return true;
+                }
+            });
+        }
+        LatLng location = new LatLng(40.809349, 29.359239);
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 15));
 
+    }
 }

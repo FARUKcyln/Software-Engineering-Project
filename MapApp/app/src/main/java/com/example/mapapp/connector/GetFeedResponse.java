@@ -16,7 +16,7 @@ public class GetFeedResponse {
         this.feedList = feedList;
     }
 
-    public Boolean getStatus() {
+    public Boolean isStatus() {
         return status;
     }
 

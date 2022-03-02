@@ -37,7 +37,7 @@ public class FeedHistoryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_feed_history);
         feedHistory = findViewById(R.id.scrollView2);
         try {
-            GetFeedResponse getFeedResponse = BackendConnector.getFeeds(LoginActivity.jwt);
+            GetFeedResponse getFeedResponse = BackendConnector.getFeedHistory(LoginActivity.jwt);
             LinearLayout linearLayout = findViewById(R.id.linearLayout);
             for (Feed feed : getFeedResponse.getFeedList()) {
                 LinearLayout verticalLinearLayout = new LinearLayout(this);

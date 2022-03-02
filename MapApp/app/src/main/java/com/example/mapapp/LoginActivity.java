@@ -11,12 +11,17 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.mapapp.connector.BackendConnector;
+import com.example.mapapp.connector.GetPointResponse;
 import com.example.mapapp.connector.Login;
 import com.example.mapapp.connector.LoginResponse;
+import com.example.mapapp.connector.Point;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class LoginActivity extends AppCompatActivity {
+    static List<Point> pointList;
     static String jwt;
     Button login;
     TextView e_mail;
@@ -35,14 +40,13 @@ public class LoginActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LoginActivity.this, PlacePickerActivity.class);
-                startActivity(intent);
-                /*Login l = new Login(String.valueOf(e_mail.getText()), String.valueOf(password.getText()));
-                System.out.println(l.getEmail() + " " + l.getPassword());
+                Login l = new Login(String.valueOf(e_mail.getText()), String.valueOf(password.getText()));
                 try {
                     LoginResponse loginResponse = BackendConnector.login(l);
                     if (loginResponse.isStatus()) {
                         jwt = loginResponse.getJwt();
+                        GetPointResponse getPointResponse = BackendConnector.getPoints(jwt);
+                        pointList  = getPointResponse.getPointList();
                         Intent intent = new Intent(LoginActivity.this, MapsActivity.class);
                         startActivity(intent);
                     } else {
@@ -50,7 +54,7 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 } catch ( IOException e) {
                     e.printStackTrace();
-                }*/
+                }
             }
         });
 

@@ -16,12 +16,14 @@ import java.util.*;
 
 
 public class BackendConnector {
-    static String FeedHistoryURL = "https://artemisbalanceapi.herokuapp.com/api/feed/get_feed";
-    static String RegisterURL = "https://artemisbalanceapi.herokuapp.com/api/user/register";
-    static String LoginURL = "https://artemisbalanceapi.herokuapp.com/api/user/login";
-    static String GetUserURL = "https://artemisbalanceapi.herokuapp.com/api/user/get_user";
-    static String UpdateUserURL = "https://artemisbalanceapi.herokuapp.com/api/user/update_user";
-    static String PostFeedURL = "https://artemisbalanceapi.herokuapp.com/api/feed/post_feed";
+    static String FeedHistoryURL = "https://artemisbalance.herokuapp.com/api/feed/get_feed";
+    static String RegisterURL = "https://artemisbalance.herokuapp.com/api/user/register";
+    static String LoginURL = "https://artemisbalance.herokuapp.com/api/user/login";
+    static String GetUserURL = "https://artemisbalance.herokuapp.com/api/user/get_user";
+    static String UpdateUserURL = "https://artemisbalance.herokuapp.com/api/user/update_user";
+    static String PostFeedURL = "https://artemisbalance.herokuapp.com/api/feed/post_feed";
+    static String ContactURL = "https://artemisbalance.herokuapp.com/api/user/contact";
+    static String PointsURL = "https://artemisbalance.herokuapp.com/api/user/get_points";
 
 
 
@@ -257,7 +259,7 @@ public class BackendConnector {
 
     }
 
-    public static GetFeedResponse getFeeds(String jwt) throws IOException {
+    public static GetFeedResponse getFeedHistory(String jwt) throws IOException {
         URL url = new URL(FeedHistoryURL);
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
         con.setRequestMethod("GET");
@@ -291,7 +293,7 @@ public class BackendConnector {
         in.close();
 
 
-        Type listType = new TypeToken<List<Feed>>(){}.getType();
+        Type listType = new TypeToken<ArrayList<Feed>>(){}.getType();
         List<Feed> feedList = new Gson().fromJson(response.toString(), listType);
         getFeedResponse.setFeedList(feedList);
         getFeedResponse.setStatus(true);
@@ -300,4 +302,94 @@ public class BackendConnector {
 
     }
 
+    public static ContactResponse postContact(String jwt, PostContact postContact) throws IOException{
+
+        URL url = new URL(ContactURL);
+        HttpURLConnection con = (HttpURLConnection) url.openConnection();
+        con.setRequestMethod("POST");
+        con.setRequestProperty("Accept", "application/json");
+        con.setRequestProperty("Content-Type", "application/json");
+        con.setRequestProperty("auth-token", jwt);
+
+        con.setDoOutput(true);
+        String jsonInputString = new ObjectMapper().writeValueAsString(postContact);
+
+        DataOutputStream wr = new DataOutputStream(con.getOutputStream());
+        wr.writeBytes(jsonInputString);
+        wr.flush();
+        wr.close();
+
+        ContactResponse contactResponse = new ContactResponse();
+        if (con.getResponseCode()!=200){
+            BufferedReader in = new BufferedReader(
+                    new InputStreamReader(con.getErrorStream()));
+            String output;
+            StringBuffer response = new StringBuffer();
+
+            while ((output = in.readLine()) != null) {
+                response.append(output);
+            }
+            in.close();
+            contactResponse.setStatus(false);
+            contactResponse.setText(response.toString());
+            return contactResponse;
+        }
+
+        BufferedReader in = new BufferedReader(
+                new InputStreamReader(con.getInputStream()));
+        String output;
+        StringBuffer response = new StringBuffer();
+
+        while ((output = in.readLine()) != null) {
+            response.append(output);
+        }
+        in.close();
+        contactResponse.setText(response.toString());
+        contactResponse.setStatus(true);
+
+        return contactResponse;
+    }
+
+    public static GetPointResponse getPoints(String jwt) throws IOException{
+
+        URL url = new URL(PointsURL);
+        HttpURLConnection con = (HttpURLConnection) url.openConnection();
+        con.setRequestMethod("GET");
+        con.setRequestProperty("Accept", "application/json");
+        con.setRequestProperty("auth-token", jwt);
+
+        GetPointResponse getPointResponse = new GetPointResponse();
+        if (con.getResponseCode()!=200){
+            BufferedReader in = new BufferedReader(
+                    new InputStreamReader(con.getErrorStream()));
+            String output;
+            StringBuffer response = new StringBuffer();
+
+            while ((output = in.readLine()) != null) {
+                response.append(output);
+            }
+            in.close();
+            getPointResponse.setStatus(false);
+            getPointResponse.setErrorText(response.toString());
+            return getPointResponse;
+        }
+
+        BufferedReader in = new BufferedReader(
+                new InputStreamReader(con.getInputStream()));
+        String output;
+        StringBuffer response = new StringBuffer();
+
+        while ((output = in.readLine()) != null) {
+            response.append(output);
+        }
+        in.close();
+
+
+        Type listType = new TypeToken<ArrayList<Point>>(){}.getType();
+        List<Point> pointList = new Gson().fromJson(response.toString(), listType);
+        getPointResponse.setPointList(pointList);
+        getPointResponse.setStatus(true);
+        return getPointResponse;
+
+    }
 }

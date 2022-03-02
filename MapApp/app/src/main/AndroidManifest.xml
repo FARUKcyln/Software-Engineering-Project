@@ -17,9 +17,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MapApp">
-        <activity
-            android:name=".PlacePickerActivity"
-            android:exported="false" />
+
         <activity
             android:name=".PopActivity"
             android:exported="false"
@@ -57,9 +55,8 @@
              You can define the keys for the debug and release targets in src/debug/ and src/release/.
         -->
         <meta-data
-            android:name="com.google.android.geo.API_KEY"
+            android:name="com.google.android.maps.v2.API_KEY"
             android:value="@string/google_maps_key" />
-
         <activity
             android:name=".MapsActivity"
             android:exported="false"
